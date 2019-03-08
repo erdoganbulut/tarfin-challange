@@ -1,6 +1,28 @@
 <template lang="pug">
   .home
-    | Home
+    table.table
+      thead.thead-dark
+        tr
+          th(scope="col") #
+          th(scope="col") First
+          th(scope="col") Last
+          th(scope="col") Handle
+      tbody
+        tr
+          th(scope="row") 1
+          td Mark
+          td Otto
+          td @mdo
+        tr
+          th(scope="row") 2
+          td Jacob
+          td Thornton
+          td @fat
+        tr
+          th(scope="row") 3
+          td Larry
+          td the Bird
+          td @twitter
 </template>
 
 <script>
