@@ -60,7 +60,7 @@ export default {
     },
   },
   mounted() {
-    this.getList();
+    this.getList({});
   },
   components: {
     Pagination,
