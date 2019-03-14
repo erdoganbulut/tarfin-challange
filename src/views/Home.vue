@@ -30,6 +30,7 @@
           td {{ item.dates.status.code }}
           td Detay
 
+    Loading(v-if="loading")
     Pagination(v-if="loaded")
 </template>
 
@@ -38,6 +39,7 @@ import { mapActions, mapGetters } from 'vuex';
 import _ from 'lodash';
 import Pagination from '../components/Pagination.vue';
 import Search from '../components/Search.vue';
+import Loading from '../components/Loading.vue';
 
 export default {
   name: 'home',
@@ -63,6 +65,7 @@ export default {
   components: {
     Pagination,
     Search,
+    Loading,
   },
 };
 </script>
