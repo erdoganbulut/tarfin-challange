@@ -37,7 +37,7 @@ export default {
       numbers.push(this.page.number);
       if (totalPages - this.page.number >= 1) numbers.push(this.page.number + 1);
       if (totalPages - this.page.number >= 2) numbers.push(this.page.number + 2);
-      if (numbers.indexOf(totalPages) < 0) numbers.push(totalPages);
+      if (numbers.indexOf(totalPages) < 0 && totalPages > 0) numbers.push(totalPages);
       return numbers;
     },
   },
