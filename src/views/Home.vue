@@ -1,5 +1,8 @@
 <template lang="pug">
   .home
+
+    Search
+
     table.table(v-if="loaded")
       thead.thead-dark
         tr
@@ -34,6 +37,7 @@
 import { mapActions, mapGetters } from 'vuex';
 import _ from 'lodash';
 import Pagination from '../components/Pagination.vue';
+import Search from '../components/Search.vue';
 
 export default {
   name: 'home',
@@ -58,6 +62,7 @@ export default {
   },
   components: {
     Pagination,
+    Search,
   },
 };
 </script>

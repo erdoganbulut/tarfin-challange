@@ -6,13 +6,13 @@ const getters = {
   page: state => state.page,
   loading: state => state.loading,
   loaded: state => state.loaded,
+  keyword: state => state.keyword,
 };
 
 const actions = {
   getList: ({ commit, state }, params) => {
     commit('SET_LOADING', true);
-    const keyword = params.keyword ? params.keyword : '';
-    const url = params.type ? state.links[params.type].href : `/discovery/v2/events.json?keyword=${keyword}&size=5`;
+    const url = params.type ? state.links[params.type].href : `/discovery/v2/events.json?keyword=${state.keyword}&size=5`;
     const goto = params.goto ? `&page=${params.goto.number}` : '';
     axios.get(`${process.env.VUE_APP_API}${url}${goto}&apikey=${process.env.VUE_APP_APIKEY}`)
       .then((response) => {
@@ -29,6 +29,9 @@ const actions = {
         commit('SET_LOADING', false);
         commit('SET_LOADED', false);
       });
+  },
+  setKeyword: ({ commit }, keyword) => {
+    commit('SET_KEYWORD', keyword);
   },
 };
 
@@ -53,6 +56,10 @@ const mutations = {
     const $state = state;
     $state.loading = status;
   },
+  SET_KEYWORD(state, keyword) {
+    const $state = state;
+    $state.keyword = keyword;
+  },
 };
 
 const state = {
@@ -61,6 +68,7 @@ const state = {
   page: null,
   loading: false,
   loaded: false,
+  keyword: '',
 };
 
 export default {
