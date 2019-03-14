@@ -3,7 +3,11 @@
     form.form-inline.justify-content-end(v-on:submit.prevent="handleForm")
       .form-group.mb-2
         label.sr-only(for="inputSearch") search keyword ex. football, cinema, etc...
-        input.form-control(v-model="modelSearch" type="text" id="inputSearch" placeholder="search keyword ex. football, cinema, etc...")
+        input.form-control(
+          v-model="modelSearch"
+          type="text"
+          id="inputSearch"
+          placeholder="search keyword ex. football, cinema, etc...")
       button.btn.btn-primary.mb-2(type="submit") Search
 </template>
 
