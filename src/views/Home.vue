@@ -1,6 +1,5 @@
 <template lang="pug">
   .home
-
     Search
 
     table.table(v-if="loaded")
@@ -32,6 +31,7 @@
 
     Loading(v-if="loading")
     Pagination(v-if="loaded")
+    Error(v-if="!loading && !loaded")
 </template>
 
 <script>
@@ -40,6 +40,7 @@ import _ from 'lodash';
 import Pagination from '../components/Pagination.vue';
 import Search from '../components/Search.vue';
 import Loading from '../components/Loading.vue';
+import Error from '../components/Error.vue';
 
 export default {
   name: 'home',
@@ -66,6 +67,7 @@ export default {
     Pagination,
     Search,
     Loading,
+    Error,
   },
 };
 </script>
