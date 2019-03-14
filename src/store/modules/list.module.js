@@ -18,7 +18,7 @@ const actions = {
       .then((response) => {
         // eslint-disable-next-line dot-notation
         if (response.data['_embedded']) commit('SET_LIST', response.data['_embedded'].events);
-        else commit('SET_LIST', null)
+        else commit('SET_LIST', null);
         // eslint-disable-next-line dot-notation
         commit('SET_LINKS', response.data['_links']);
         commit('SET_PAGE', response.data.page);
