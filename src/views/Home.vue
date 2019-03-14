@@ -27,7 +27,9 @@
               br
               |  ({{ item.dates.timezone }})
           td {{ item.dates.status.code }}
-          td Detay
+          td
+            router-link(:to="'/detail/' + item.id")
+              img(src="../assets/loupe.svg" width="18")
 
     Loading(v-if="loading")
     Pagination(v-if="loaded")
