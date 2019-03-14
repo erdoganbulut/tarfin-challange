@@ -66,7 +66,6 @@ export default {
         goto: {
           number,
         },
-        keyword: 'P!NK',
       };
       this.getList(params);
     },

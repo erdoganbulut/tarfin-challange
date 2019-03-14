@@ -58,7 +58,7 @@ export default {
     },
   },
   mounted() {
-    this.getList({ keyword: 'P!NK' });
+    this.getList();
   },
   components: {
     Pagination,
